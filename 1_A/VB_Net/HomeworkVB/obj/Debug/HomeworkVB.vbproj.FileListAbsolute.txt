@@ -1,0 +1,12 @@
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\bin\Debug\HomeworkVB.exe.config
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\bin\Debug\HomeworkVB.exe
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\bin\Debug\HomeworkVB.pdb
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\bin\Debug\HomeworkVB.xml
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\obj\Debug\HomeworkVB.vbprojAssemblyReference.cache
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\obj\Debug\HomeworkVB.Form1.resources
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\obj\Debug\HomeworkVB.Resources.resources
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\obj\Debug\HomeworkVB.vbproj.GenerateResource.cache
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\obj\Debug\HomeworkVB.vbproj.CoreCompileInputs.cache
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\obj\Debug\HomeworkVB.exe
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\obj\Debug\HomeworkVB.xml
+C:\Users\Enzoc\source\repos\HomeworkVB\HomeworkVB\obj\Debug\HomeworkVB.pdb

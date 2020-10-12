@@ -1,0 +1,15 @@
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\obj\Debug\netcoreapp3.1\Homeworks.csprojAssemblyReference.cache
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\obj\Debug\netcoreapp3.1\Homeworks.Form1.resources
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\obj\Debug\netcoreapp3.1\Homeworks.csproj.GenerateResource.cache
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\obj\Debug\netcoreapp3.1\Homeworks.AssemblyInfoInputs.cache
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\obj\Debug\netcoreapp3.1\Homeworks.AssemblyInfo.cs
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\obj\Debug\netcoreapp3.1\Homeworks.csproj.CoreCompileInputs.cache
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\bin\Debug\netcoreapp3.1\Homeworks.exe
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\bin\Debug\netcoreapp3.1\Homeworks.deps.json
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\bin\Debug\netcoreapp3.1\Homeworks.runtimeconfig.json
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\bin\Debug\netcoreapp3.1\Homeworks.runtimeconfig.dev.json
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\bin\Debug\netcoreapp3.1\Homeworks.dll
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\bin\Debug\netcoreapp3.1\Homeworks.pdb
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\obj\Debug\netcoreapp3.1\Homeworks.dll
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\obj\Debug\netcoreapp3.1\Homeworks.pdb
+C:\Users\Enzoc\source\repos\Homeworks\Homeworks\obj\Debug\netcoreapp3.1\Homeworks.genruntimeconfig.cache

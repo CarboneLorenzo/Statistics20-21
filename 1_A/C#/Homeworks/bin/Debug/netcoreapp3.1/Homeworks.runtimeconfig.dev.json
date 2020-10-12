@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Enzoc\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Enzoc\\.nuget\\packages"
+    ]
+  }
+}
