@@ -1,0 +1,15 @@
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\bin\Debug\netcoreapp3.1\C.exe
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\bin\Debug\netcoreapp3.1\C.deps.json
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\bin\Debug\netcoreapp3.1\C.runtimeconfig.json
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\bin\Debug\netcoreapp3.1\C.runtimeconfig.dev.json
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\bin\Debug\netcoreapp3.1\C.dll
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\bin\Debug\netcoreapp3.1\C.pdb
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\obj\Debug\netcoreapp3.1\C.csprojAssemblyReference.cache
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\obj\Debug\netcoreapp3.1\C.Form1.resources
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\obj\Debug\netcoreapp3.1\C.csproj.GenerateResource.cache
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\obj\Debug\netcoreapp3.1\C.AssemblyInfoInputs.cache
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\obj\Debug\netcoreapp3.1\C.AssemblyInfo.cs
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\obj\Debug\netcoreapp3.1\C.csproj.CoreCompileInputs.cache
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\obj\Debug\netcoreapp3.1\C.dll
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\obj\Debug\netcoreapp3.1\C.pdb
+C:\Users\Enzoc\Desktop\StatisticSources\Statistics20-21\Lesson1\3_A\C\C\obj\Debug\netcoreapp3.1\C.genruntimeconfig.cache
