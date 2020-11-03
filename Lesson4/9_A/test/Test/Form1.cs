@@ -20,8 +20,8 @@ namespace Test
         Random r = new Random();
         double IntervalSize_X = 10;
         double IntervalSize_Y = 10;
-        double maxX_Window = 300;
-        double maxY_Window = 300;
+        double maxX_Window = 100;
+        double maxY_Window = 100;
         double minX_Window = 0;
         double minY_Window = 0;
         List<interval> listOfInterval_X;
