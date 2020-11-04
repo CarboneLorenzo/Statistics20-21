@@ -18,3 +18,13 @@ C:\Users\Lorenzo\Desktop\Statistic\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj
 C:\Users\Lorenzo\Desktop\Statistic\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.csproj.CoreCompileInputs.cache
 C:\Users\Lorenzo\Desktop\Statistic\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.exe
 C:\Users\Lorenzo\Desktop\Statistic\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.pdb
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\bin\Debug\CSharp.exe.config
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\bin\Debug\CSharp.exe
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\bin\Debug\CSharp.pdb
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.csprojAssemblyReference.cache
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.Form1.resources
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.Properties.Resources.resources
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.csproj.GenerateResource.cache
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.csproj.CoreCompileInputs.cache
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.exe
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson4\9_A\CSharp\CSharp\obj\Debug\CSharp.pdb

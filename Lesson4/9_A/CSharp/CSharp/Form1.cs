@@ -114,6 +114,9 @@ namespace CSharp
                     dataGridView1.DataSource = dt;
                     richTextBox2.Clear();
                     button2.Enabled = false;
+                    comboBox2.Items.Clear();
+                    comboBox3.Items.Clear();
+
                 }
                 
 
@@ -136,18 +139,27 @@ namespace CSharp
                 if (radioButton1.Checked)
                 {
                     dtCloned.Columns[selectedColumn].DataType = typeof(String);
+                    if (comboBox2.Items.Contains(dtCloned.Columns[selectedColumn].ColumnName)) comboBox2.Items.Remove(dtCloned.Columns[selectedColumn].ColumnName);
+                    if (comboBox3.Items.Contains(dtCloned.Columns[selectedColumn].ColumnName)) comboBox3.Items.Remove(dtCloned.Columns[selectedColumn].ColumnName);
                 }
                 else if (radioButton2.Checked)
                 {
                     dtCloned.Columns[selectedColumn].DataType = typeof(Int32);
+                    if (!(comboBox2.Items.Contains(dtCloned.Columns[selectedColumn].ColumnName))) comboBox2.Items.Add(dtCloned.Columns[selectedColumn].ColumnName);
+                    if (!(comboBox3.Items.Contains(dtCloned.Columns[selectedColumn].ColumnName))) comboBox3.Items.Add(dtCloned.Columns[selectedColumn].ColumnName);
+
                 }
                 else if (radioButton3.Checked)
                 {
                     dtCloned.Columns[selectedColumn].DataType = typeof(Double);
+                    if (!(comboBox2.Items.Contains(dtCloned.Columns[selectedColumn].ColumnName))) comboBox2.Items.Add(dtCloned.Columns[selectedColumn].ColumnName);
+                    if (!(comboBox3.Items.Contains(dtCloned.Columns[selectedColumn].ColumnName))) comboBox3.Items.Add(dtCloned.Columns[selectedColumn].ColumnName);
                 }
                 else
                 {
                     dtCloned.Columns[selectedColumn].DataType = typeof(Boolean);
+                    if (comboBox2.Items.Contains(dtCloned.Columns[selectedColumn].ColumnName)) comboBox2.Items.Remove(dtCloned.Columns[selectedColumn].ColumnName);
+                    if (comboBox3.Items.Contains(dtCloned.Columns[selectedColumn].ColumnName)) comboBox3.Items.Remove(dtCloned.Columns[selectedColumn].ColumnName);
                 }
 
                 foreach (DataRow row in dt.Rows)
@@ -197,6 +209,7 @@ namespace CSharp
         double maxY_Window = 250;
         double minX_Window = 0;
         double minY_Window = 0;
+        double percentage = 50;
         List<interval> listOfInterval_X;
         List<interval> listOfInterval_Y;
 
@@ -213,105 +226,158 @@ namespace CSharp
 
         }
 
+        private void createContingencyTable(List<interval> listX, List<interval> listY, Dictionary<Tuple<interval, interval>, int> dict)
+        {
+            DataTable ct = new DataTable();
+            ct.Columns.Add("CT");
+            foreach(interval intervX in listX)
+            {
+                ct.Columns.Add(intervX.lowerBound + " - " + intervX.upperBound);
+            }
+
+            
+            foreach(interval intervY in listY)
+            {
+                //ct.Rows.Add(interv.lowerBound + " - " + interv.upperBound);
+                List<String> newlist = new List<string>();
+                for(int x = 0; x<ct.Columns.Count; x++)
+                {
+                    newlist.Add("0");
+                }
+                newlist[0] = (intervY.lowerBound + " - " + intervY.upperBound);
+
+                foreach (KeyValuePair<Tuple<interval, interval>, int> pair in dict)
+                {
+                    if (pair.Key.Item2.lowerBound == intervY.lowerBound)
+                    {
+                        int x = (ct.Columns.IndexOf(pair.Key.Item1.lowerBound + " - " + pair.Key.Item1.upperBound));
+                        newlist[x] = (pair.Value.ToString());
+                    }
+                }
+                ct.Rows.Add(newlist.ToArray());
+            }
+
+            dataGridView2.DataSource = ct;
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
-            initializeGraphics();
-            List<DataPoint> dt = new List<DataPoint>();
-
-
-            for (int i = 0; i < 5; i++)
+            if (((dt.Columns[comboBox2.GetItemText(comboBox2.SelectedItem)].DataType == typeof(int)) || (dt.Columns[comboBox2.GetItemText(comboBox2.SelectedItem)].DataType == typeof(double)))
+                && ((dt.Columns[comboBox3.GetItemText(comboBox3.SelectedItem)].DataType == typeof(int)) || (dt.Columns[comboBox3.GetItemText(comboBox3.SelectedItem)].DataType == typeof(double))))
             {
-                DataPoint dp = new DataPoint();
-                dp.X = (double)r.Next(0, 300);
-                dp.Y = (double)r.Next(0, 300);
-                dt.Add(dp);
-            }
+                initializeGraphics();
+                List<DataPoint> data = new List<DataPoint>();
 
-            Dictionary<Tuple<interval, interval>, int> freqs = BivariateDistribution_DiscreteVariable(IntervalSize_X, IntervalSize_Y, minX_Window, minY_Window, dt);
 
-            double RangeX = maxX_Window - minX_Window;
-            double RangeY = maxY_Window - minY_Window;
-            int percentage = 50;
-
-            Rectangle viewport = new Rectangle(320, 20, 300, 200);
-            Rectangle viewport2 = new Rectangle(20, 220, 300, 150);
-            Rectangle viewport3 = new Rectangle(20, 20, 300, 200);
-            g.DrawRectangle(Pens.Green, viewport3);
-            g.DrawRectangle(Pens.Green, viewport2);
-            g.DrawRectangle(Pens.Green, viewport);
-
-            for (double x = minX_Window; x < maxX_Window; x += IntervalSize_X)
-            {
-                g.DrawString(x.ToString(), smallFont, Brushes.Red, new Point(X_viewPort(x, viewport2, minX_Window, RangeX) - 5, Y_viewPort(0, viewport2, minY_Window, RangeY)));
-            }
-
-            for (double y = minY_Window; y < maxY_Window; y += IntervalSize_Y)
-            {
-                g.DrawString(y.ToString(), smallFont, Brushes.Red, new Point(X_viewPort(0, viewport3, minX_Window, RangeX) - 20, Y_viewPort(y, viewport3, minY_Window, RangeY) - 5));
-            }
-
-            foreach (interval interv in listOfInterval_X)
-            {
-                double lb = interv.lowerBound;
-                double ub = interv.upperBound;
-                if (lb >= minX_Window && ub <= maxX_Window)
+                foreach (DataRow row in dt.Rows)
                 {
+                    DataPoint dp = new DataPoint();
+                    double X = double.Parse((row.ItemArray[row.Table.Columns.IndexOf(comboBox2.GetItemText(comboBox2.SelectedItem))].ToString()));
+                    dp.X = X;
+                    double Y = double.Parse((row.ItemArray[row.Table.Columns.IndexOf(comboBox3.GetItemText(comboBox3.SelectedItem))].ToString()));
+                    dp.Y = Y;
+                    data.Add(dp);
+                }
 
-                    int x_start_width = X_viewPort(lb, viewport2, minX_Window, RangeX);
-                    int x_stop_width = X_viewPort(ub, viewport2, minX_Window, RangeX);
+                Dictionary<Tuple<interval, interval>, int> freqs = BivariateDistribution_DiscreteVariable(IntervalSize_X, IntervalSize_Y, minX_Window, minY_Window, data);
+                createContingencyTable(listOfInterval_X, listOfInterval_Y,freqs);
+                double RangeX = maxX_Window - minX_Window;
+                double RangeY = maxY_Window - minY_Window;
 
-                    int y_zero = Y_viewPort(0, viewport2, minY_Window, RangeY);
+                Rectangle viewport = new Rectangle(400, 100, 320, 270);
+                Rectangle viewport2 = new Rectangle(20, 250, 320, 220);
+                Rectangle viewport3 = new Rectangle(20, 10, 320, 220);
+                g.DrawRectangle(Pens.Black, viewport3);
+                g.DrawRectangle(Pens.Black, viewport2);
+                g.DrawRectangle(Pens.Black, viewport);
 
-                    double mF = interv.marginalFrequency;
-                    if (mF > viewport2.Height) mF = viewport2.Height;
-                    int y_Resized = Y_viewPort((mF * percentage), viewport2, minY_Window, RangeY);
+                for (double x = minX_Window; x < maxX_Window; x += IntervalSize_X)
+                {
+                    g.DrawString(x.ToString(), smallFont, Brushes.Red, new Point(X_viewPort(x, viewport2, minX_Window, RangeX) - 5, Y_viewPort(minY_Window, viewport2, minY_Window, RangeY)));
+                }
 
-                    Rectangle recX = new Rectangle(x_start_width, y_Resized, x_stop_width - x_start_width, y_zero - y_Resized);
-                    if (interv.marginalFrequency > 0)
+                for (double y = minY_Window; y < maxY_Window; y += IntervalSize_Y)
+                {
+                    g.DrawString(y.ToString(), smallFont, Brushes.Red, new Point(X_viewPort(minX_Window, viewport3, minX_Window, RangeX) - 20, Y_viewPort(y, viewport3, minY_Window, RangeY) - 5));
+                }
+
+                foreach (interval interv in listOfInterval_X)
+                {
+                    double lb = interv.lowerBound;
+                    double ub = interv.upperBound;
+                    if (lb >= minX_Window && ub <= maxX_Window)
                     {
-                        g.DrawString(interv.marginalFrequency.ToString(), smallFont, Brushes.Red, new Point(x_start_width+2, y_Resized - 15));
+
+                        int x_start_width = X_viewPort(lb, viewport2, minX_Window, RangeX);
+                        int x_stop_width = X_viewPort(ub, viewport2, minX_Window, RangeX);
+
+                        int y_zero = Y_viewPort(minY_Window, viewport2, minY_Window, RangeY);
+
+                        double mF = interv.marginalFrequency * percentage;
+                        if (mF > maxY_Window) mF = maxY_Window;
+                        int y_Resized = Y_viewPort(mF, viewport2, minY_Window, RangeY);
+
+                        Rectangle recX = new Rectangle(x_start_width, y_Resized, x_stop_width - x_start_width, y_zero - y_Resized);
+                        if (interv.marginalFrequency > 0)
+                        {
+                            g.DrawString(interv.marginalFrequency.ToString(), smallFont, Brushes.Red, new Point(x_start_width + 2, y_Resized - 15));
+
+                        }
+                        g.FillRectangle(Brushes.Blue, recX);
+                        g.DrawRectangle(Pens.Red, recX);
                     }
-                    g.FillRectangle(Brushes.Blue, recX);
-                    g.DrawRectangle(Pens.Red, recX);
                 }
-            }
 
-            foreach (interval interv in listOfInterval_Y)
-            {
-                double lb = interv.lowerBound;
-                double ub = interv.upperBound;
-                if (lb >= minY_Window && ub <= maxY_Window)
+                foreach (interval interv in listOfInterval_Y)
                 {
-                    int y_start_height = Y_viewPort(lb, viewport3, minY_Window, RangeY);
-                    int y_stop_height = Y_viewPort(ub, viewport3, minY_Window, RangeY);
-
-                    int x_zero = X_viewPort(0, viewport3, minX_Window, RangeX);
-                    int x_Resized = X_viewPort((interv.marginalFrequency * percentage), viewport3, minX_Window, RangeX);
-
-                    Rectangle recY = new Rectangle(x_zero, y_stop_height, x_Resized - x_zero, y_start_height - y_stop_height);
-                    if (interv.marginalFrequency > 0)
+                    double lb = interv.lowerBound;
+                    double ub = interv.upperBound;
+                    if (lb >= minY_Window && ub <= maxY_Window)
                     {
-                        g.DrawString(interv.marginalFrequency.ToString(), smallFont, Brushes.Red, new Point(x_Resized+5, y_stop_height));
+                        int y_start_height = Y_viewPort(lb, viewport3, minY_Window, RangeY);
+                        int y_stop_height = Y_viewPort(ub, viewport3, minY_Window, RangeY);
+
+                        int x_zero = X_viewPort(minX_Window, viewport3, minX_Window, RangeX);
+
+                        double width = interv.marginalFrequency * percentage;
+                        if (width > maxX_Window) width = maxX_Window;
+                        int x_Resized = X_viewPort(width, viewport3, minX_Window, RangeX);
+
+
+                        Rectangle recY = new Rectangle(x_zero, y_stop_height, x_Resized - x_zero, y_start_height - y_stop_height);
+                        if (interv.marginalFrequency > 0)
+                        {
+                            g.DrawString(interv.marginalFrequency.ToString(), smallFont, Brushes.Red, new Point(x_Resized + 5, y_stop_height));
+
+                        }
+                        g.FillRectangle(Brushes.Blue, recY);
+                        g.DrawRectangle(Pens.Red, recY);
                     }
-                    g.FillRectangle(Brushes.Blue, recY);
-                    g.DrawRectangle(Pens.Red, recY);
                 }
-            }
 
-            foreach (DataPoint dp in dt)
-            {
-                int x_Device = X_viewPort(dp.X, viewport, minX_Window, RangeX);
-                int y_Device = Y_viewPort(dp.Y, viewport, minY_Window, RangeY);
-                if ((dp.X < maxX_Window && dp.X > minX_Window) && (dp.Y < maxY_Window && dp.Y > minY_Window))
+                foreach (DataPoint dp in data)
                 {
-                    g.FillEllipse(Brushes.Blue, new Rectangle(new Point(x_Device - 3, y_Device - 3), new Size(6, 6)));
-                    g.DrawString(dp.X.ToString() + "," + dp.Y.ToString(), smallFont, Brushes.Red, new Point(x_Device, y_Device));
+                    int x_Device = X_viewPort(dp.X, viewport, minX_Window, RangeX);
+                    int y_Device = Y_viewPort(dp.Y, viewport, minY_Window, RangeY);
+                    int x_zero = X_viewPort(minX_Window, viewport, minX_Window, RangeX);
+                    int y_zero = Y_viewPort(minY_Window, viewport, minY_Window, RangeY);
+                    if ((dp.X < maxX_Window && dp.X > minX_Window) && (dp.Y < maxY_Window && dp.Y > minY_Window))
+                    {
+                        g.DrawLine(new Pen(Brushes.Red), new Point(x_zero - 5, y_Device), new Point(x_zero + 5, y_Device));
+                        g.DrawLine(new Pen(Brushes.Red), new Point(x_Device, y_zero - 5), new Point(x_Device, y_zero + 5));
+                        g.FillEllipse(Brushes.Blue, new Rectangle(new Point(x_Device - 3, y_Device - 3), new Size(6, 6)));
+                        g.DrawString(dp.X.ToString() + "," + dp.Y.ToString(), smallFont, Brushes.Red, new Point(x_Device, y_Device));
+                    }
+
                 }
 
+
+                pictureBox1.Image = b;
             }
-
-
-            pictureBox1.Image = b;
+            else
+            {
+                MessageBox.Show("Select an Integer or a Double variable!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -449,6 +515,21 @@ namespace CSharp
         private void numericUpDown6_ValueChanged(object sender, EventArgs e)
         {
             maxX_Window = (double)numericUpDown6.Value;
+        }
+
+        private void numericUpDown7_ValueChanged(object sender, EventArgs e)
+        {
+            percentage = (double)numericUpDown7.Value;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
