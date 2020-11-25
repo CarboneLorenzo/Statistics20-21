@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Enzoc\\Desktop\\StatisticSources\\Statistics20-21\\Lesson2\\4_A\\CSharp\\CSharp\\CSharp.csproj",
+      "projectUniqueName": "C:\\Users\\Enzoc\\Desktop\\Statistica\\Statistics20-21\\Lesson2\\4_A\\CSharp\\CSharp\\CSharp.csproj",
       "projectName": "CSharp",
-      "projectPath": "C:\\Users\\Enzoc\\Desktop\\StatisticSources\\Statistics20-21\\Lesson2\\4_A\\CSharp\\CSharp\\CSharp.csproj",
+      "projectPath": "C:\\Users\\Enzoc\\Desktop\\Statistica\\Statistics20-21\\Lesson2\\4_A\\CSharp\\CSharp\\CSharp.csproj",
       "packagesPath": "C:\\Users\\Enzoc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Enzoc\\Desktop\\StatisticSources\\Statistics20-21\\Lesson2\\4_A\\CSharp\\CSharp\\obj\\",
+      "outputPath": "C:\\Users\\Enzoc\\Desktop\\Statistica\\Statistics20-21\\Lesson2\\4_A\\CSharp\\CSharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Enzoc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -24,6 +24,7 @@ namespace CSharp
         int n = 100;
         int max = 20;
         int min = 1;
+        int m = 1000;
 
         private void initializeGraphics()
         {
@@ -84,13 +85,25 @@ namespace CSharp
 
             }
 
-            List<int> keys = new List<int>(freq.Keys);
-            for(int j=0; j<n; j++)
+            List<int> paths = new List<int>();
+            for(int i=0; i<m; i++)
             {
-                int obs = r.Next(min, max);
+                int media = 0;
+                for (int j=1; j<=n; j++)
+                {
+                    int obs = r.Next(min, max);
+                    media = media + (obs - media) / j;
+
+                }
+                paths.Add(media);
+            }
+
+            List<int> keys = new List<int>(freq.Keys);
+            foreach( int path in paths)
+            {
                 foreach(int k in keys)
                 {
-                    if(k == obs)
+                    if(k == path)
                     {
                         freq[k]++;
                     }
@@ -106,12 +119,12 @@ namespace CSharp
                 if (kv.Value>0)
                 {
                     count += kv.Value;
-                    g.DrawLine(new Pen(Brushes.Blue), start, new Point(start.X, Y_viewPort((double)count/(double)n, viewport, minY_Window, RangeY)));
-                    start = new Point(start.X, Y_viewPort((double)count / (double)n, viewport, minY_Window, RangeY));
+                    g.DrawLine(new Pen(Brushes.Blue), start, new Point(start.X, Y_viewPort((double)count/(double)m, viewport, minY_Window, RangeY)));
+                    start = new Point(start.X, Y_viewPort((double)count / (double)m, viewport, minY_Window, RangeY));
                 }
 
                 int rectx = X_viewPort(kv.Key, viewport2, minX_Window, RangeX);
-                int recty = Y_viewPort(((double)kv.Value / (double)n), viewport2, minY_Window, RangeY);
+                int recty = Y_viewPort(((double)kv.Value / (double)m), viewport2, minY_Window, RangeY);
                 Rectangle rect = new Rectangle(rectx, recty, X_viewPort(kv.Key+1, viewport2, minX_Window, RangeX) - rectx, y_zero2 - recty);
                 g.FillRectangle(Brushes.Blue, rect);
                 g.DrawRectangle(Pens.Red, rect);
@@ -158,6 +171,11 @@ namespace CSharp
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
             max = (int)numericUpDown2.Value;
+        }
+
+        private void numericUpDown4_ValueChanged(object sender, EventArgs e)
+        {
+            m = (int)numericUpDown4.Value;
         }
     }
 }
