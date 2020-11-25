@@ -85,14 +85,14 @@ namespace CSharp
 
             }
 
-            List<int> paths = new List<int>();
+            List<double> paths = new List<double>();
             for(int i=0; i<m; i++)
             {
-                int media = 0;
+                double media = 0;
                 for (int j=1; j<=n; j++)
                 {
                     int obs = r.Next(min, max);
-                    media = media + (obs - media) / j;
+                    media = media + ((double)obs - media) / j;
 
                 }
                 paths.Add(media);
@@ -103,32 +103,32 @@ namespace CSharp
             {
                 foreach(int k in keys)
                 {
-                    if(k == path)
+                    if(k == (int) path)
                     {
                         freq[k]++;
                     }
                 }
             }
 
+            paths.Sort();
             int count = 0;
             Point start = new Point(X_viewPort(minX_Window, viewport, minX_Window, RangeX), Y_viewPort(minY_Window, viewport, minY_Window, RangeY));
+            foreach(double mean in paths)
+            {
+                g.DrawLine(new Pen(Brushes.Blue), start, new Point(X_viewPort(mean, viewport, minX_Window, RangeX), start.Y));
+                start = new Point(X_viewPort(mean, viewport, minX_Window, RangeX), start.Y);
+                count++;
+                g.DrawLine(new Pen(Brushes.Blue), start, new Point(start.X, Y_viewPort((double)count / (double)m, viewport, minY_Window, RangeY)));
+                start = new Point(start.X, Y_viewPort((double)count / (double)m, viewport, minY_Window, RangeY));
+            }
+
             foreach(KeyValuePair<int,int> kv in freq)
             {
-                g.DrawLine(new Pen(Brushes.Blue), start, new Point(X_viewPort(kv.Key, viewport, minX_Window, RangeX), start.Y));
-                start = new Point(X_viewPort(kv.Key, viewport, minX_Window, RangeX), start.Y);
-                if (kv.Value>0)
-                {
-                    count += kv.Value;
-                    g.DrawLine(new Pen(Brushes.Blue), start, new Point(start.X, Y_viewPort((double)count/(double)m, viewport, minY_Window, RangeY)));
-                    start = new Point(start.X, Y_viewPort((double)count / (double)m, viewport, minY_Window, RangeY));
-                }
-
                 int rectx = X_viewPort(kv.Key, viewport2, minX_Window, RangeX);
                 int recty = Y_viewPort(((double)kv.Value / (double)m), viewport2, minY_Window, RangeY);
                 Rectangle rect = new Rectangle(rectx, recty, X_viewPort(kv.Key+1, viewport2, minX_Window, RangeX) - rectx, y_zero2 - recty);
                 g.FillRectangle(Brushes.Blue, rect);
                 g.DrawRectangle(Pens.Red, rect);
-
             }
 
 
