@@ -8,13 +8,13 @@ C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson6\13_A\CSharp\CSharp\obj
 C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson6\13_A\CSharp\CSharp\obj\Debug\CSharp.csproj.CoreCompileInputs.cache
 C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson6\13_A\CSharp\CSharp\obj\Debug\CSharp.exe
 C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson6\13_A\CSharp\CSharp\obj\Debug\CSharp.pdb
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\bin\Debug\CSharp.exe.config
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\bin\Debug\CSharp.exe
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\bin\Debug\CSharp.pdb
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\obj\Debug\CSharp.csprojAssemblyReference.cache
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\obj\Debug\CSharp.Form1.resources
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\obj\Debug\CSharp.Properties.Resources.resources
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\obj\Debug\CSharp.csproj.GenerateResource.cache
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\obj\Debug\CSharp.csproj.CoreCompileInputs.cache
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\obj\Debug\CSharp.exe
-C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Lesson8\18_A\CSharp\CSharp\obj\Debug\CSharp.pdb
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\bin\Debug\CSharp.exe.config
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\bin\Debug\CSharp.exe
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\bin\Debug\CSharp.pdb
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\obj\Debug\CSharp.csprojAssemblyReference.cache
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\obj\Debug\CSharp.Form1.resources
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\obj\Debug\CSharp.Properties.Resources.resources
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\obj\Debug\CSharp.csproj.GenerateResource.cache
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\obj\Debug\CSharp.csproj.CoreCompileInputs.cache
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\obj\Debug\CSharp.exe
+C:\Users\Enzoc\Desktop\Statistica\Statistics20-21\Final Apps\StocasticProcess\CSharp\CSharp\obj\Debug\CSharp.pdb
